@@ -1,6 +1,5 @@
-![SlackMessenger Logo](https://a.slack-edge.com/9c217/img/loading_hash_animation.gif)  # SlackMessenger
+# ![SlackMessenger Logo](https://a.slack-edge.com/9c217/img/loading_hash_animation.gif)  SlackMessenger
 
-[![Build status](https://ci.appveyor.com/api/github/webhook?id=5p6ablrqrwyuolis)](https://ci.appveyor.com/project/Behzadkhosravifar/SlackMessenger)
 [![nuget version](https://img.shields.io/nuget/v/SlackMessenger.svg)](https://www.nuget.org/packages/SlackMessenger)
 [![Nuget Downloads](https://img.shields.io/nuget/dt/SlackMessenger.svg)](https://www.nuget.org/packages/SlackMessenger)
 
