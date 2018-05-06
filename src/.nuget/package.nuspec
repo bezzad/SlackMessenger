@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8">
+    <id>SlackMessenger</id>
+    <title>SlackMessenger</title>
+    <!--<iconUrl></iconUrl>-->
+    <version>1.0.1</version>
+    <description>
+      A simple library for sending Slack Messages
+    </description>
+    <summary>
+      A .NET library to enable you to send bot messages in slack, by posting messages to Slack's incoming WebHook Urls
+    </summary>
+    <authors>Behzad Khosravifar</authors>
+    <owners>Behzad Khosravifar</owners>
+    <licenseUrl>https://github.com/Behzadkhosravifar/SlackMessenger/blob/master/License.md</licenseUrl>
+    <projectUrl>https://github.com/Behzadkhosravifar/SlackMessenger/</projectUrl>
+    <iconUrl>https://a.slack-edge.com/9c217/img/loading_hash_animation.gif</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright (C) 2018 Behzad Khosravifar</copyright>
+    <tags>Slack,Bot,Messages,Messaging,WebRequest,WebHook</tags>
+    <!--<developmentDependency>true</developmentDependency>
+    <dependencies>
+      <group targetFramework="net45">
+        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.5" />
+      </group>
+    </dependencies>-->
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Core" />
+      <frameworkAssembly assemblyName="System.Xml" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\..\Out\**" target="lib/net45" />
+    <file src="..\..\readme.md" target="" />
+  </files>
+</package>
