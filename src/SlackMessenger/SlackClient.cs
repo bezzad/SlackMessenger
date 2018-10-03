@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SlackMessenger
 {
@@ -23,7 +24,17 @@ namespace SlackMessenger
         /// <returns>The response from the server</returns>
         public string Send(Message message)
         {
-            return ProcessRequest(WebHookUrl, PreparePostData(message));
+            return ProcessRequestAsync(WebHookUrl, PreparePostData(message)).Result;
+        }
+
+        /// <summary>
+        /// Async implementation of sending a Slack message
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public async Task<string> SendAsync(Message message)
+        {
+            return await ProcessRequestAsync(WebHookUrl, PreparePostData(message));
         }
 
         /// <summary>
@@ -64,29 +75,30 @@ namespace SlackMessenger
         }
 
         /// <summary>
-        /// Calls a web request using the webhook URL and the data from the message
+        /// Async ProcessRequest implementation
         /// </summary>
-        /// <param name="webhookUrl">The webhook URL to send the message to</param>
-        /// <param name="sbPostData">A string for the payload containing the slack message</param>
-        /// <returns>The response from the server</returns>
-        private static string ProcessRequest(string webhookUrl, string sbPostData)
+        /// <param name="webhookUrl"></param>
+        /// <param name="sbPostData"></param>
+        /// <returns></returns>
+        private static async Task<string> ProcessRequestAsync(string webhookUrl, string sbPostData)
         {
             var request = WebRequest.Create(webhookUrl);
             request.Method = "POST";
             var byteArray = Encoding.UTF8.GetBytes(sbPostData);
             request.ContentType = @"application/x-www-form-urlencoded";
             request.ContentLength = byteArray.Length;
-            using (var reqStream = request.GetRequestStream())
+
+            using (var reqStream = await request.GetRequestStreamAsync())
             {
                 reqStream.Write(byteArray, 0, byteArray.Length);
-                using (var response = request.GetResponse())
+                using (var response = await request.GetResponseAsync())
                 using (var respStream = response.GetResponseStream())
                 {
                     if (respStream != null)
                     {
                         using (var reader = new StreamReader(respStream))
                         {
-                            var responseFromServer = reader.ReadToEnd();
+                            var responseFromServer = await reader.ReadToEndAsync();
                             reader.Close();
                             return responseFromServer;
                         }

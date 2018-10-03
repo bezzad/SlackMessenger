@@ -4,20 +4,20 @@
     <id>SlackMessenger</id>
     <title>SlackMessenger</title>
     <!--<iconUrl></iconUrl>-->
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <description>
       A simple library for sending Slack Messages
     </description>
     <summary>
       A .NET library to enable you to send bot messages in slack, by posting messages to Slack's incoming WebHook Urls
     </summary>
-    <authors>Behzad Khosravifar</authors>
+    <authors>Behzad Khosravifar, Scott McIntosh</authors>
     <owners>Behzad Khosravifar</owners>
     <licenseUrl>https://github.com/Behzadkhosravifar/SlackMessenger/blob/master/License.md</licenseUrl>
     <projectUrl>https://github.com/Behzadkhosravifar/SlackMessenger/</projectUrl>
     <iconUrl>https://a.slack-edge.com/9c217/img/loading_hash_animation.gif</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>First release</releaseNotes>
+    <releaseNotes>Async release</releaseNotes>
     <copyright>Copyright (C) 2018 Behzad Khosravifar</copyright>
     <tags>Slack,Bot,Messages,Messaging,WebRequest,WebHook</tags>
     <!--<developmentDependency>true</developmentDependency>
